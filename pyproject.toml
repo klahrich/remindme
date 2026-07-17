@@ -1,0 +1,15 @@
+[project]
+name = "remindme"
+version = "0.1.0"
+description = "Phone-call reminders 1 minute before Google Calendar meetings (via Twilio)"
+requires-python = ">=3.11"
+dependencies = [
+    "google-api-python-client>=2.140.0",
+    "google-auth-httplib2>=0.2.0",
+    "google-auth-oauthlib>=1.2.0",
+    "twilio>=9.0.0",
+    "python-dotenv>=1.0.0",
+]
+
+[tool.uv]
+package = false
