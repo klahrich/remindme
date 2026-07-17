@@ -5,6 +5,9 @@
 every 1 min) detected a test event, placed the call ~65s before start, and
 dedupe correctly suppressed the repeat on the next run. Twilio trial account
 (preamble plays before message; callee must be a verified number).
+Task runs HIDDEN via a generated `scripts/run_hidden.vbs` (wscript, window style 0;
+machine-specific paths, gitignored) — re-run `scripts/setup_task.ps1` after moving
+the repo or changing the scheduler action.
 
 ## What this is
 Stateless Python app that calls the user's phone (Twilio) ~1 minute before every
