@@ -1,5 +1,11 @@
 # AGENTS.md — remindme
 
+## Status
+**Live since 2026-07-17.** E2E test passed: Task Scheduler (`RemindMeMinuteCheck`,
+every 1 min) detected a test event, placed the call ~65s before start, and
+dedupe correctly suppressed the repeat on the next run. Twilio trial account
+(preamble plays before message; callee must be a verified number).
+
 ## What this is
 Stateless Python app that calls the user's phone (Twilio) ~1 minute before every
 Google Calendar meeting, across all calendars linked to one Google account.
