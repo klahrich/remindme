@@ -21,14 +21,24 @@ time. A small state file (`state/seen.json`) guarantees no double-calls.
 
 ## Setup
 
-Prerequisites: [uv](https://docs.astral.sh/uv/), a Google account, a Twilio account
-(trial works — callee number must be verified).
+Prerequisites: [uv](https://docs.astral.sh/uv/), a Google account, and a **Twilio
+account** (free trial works — see step 2; calls cost ~$0.01–0.02/min on paid plans).
 
 1. **Google Cloud**: create a project, enable **Google Calendar API**, configure the
    OAuth consent screen (External, add yourself as test user), create an
    **OAuth client ID (Desktop app)** and download the JSON as
    `gcp-remindme-oauth-client.json` in the repo root. (Already done for this repo.)
-2. **Environment**: copy `.env.example` to `.env` and fill in your Twilio values.
+2. **Twilio**: sign up at [twilio.com](https://www.twilio.com/try-twilio) (the
+   trial gives you free credit). Then:
+   - **Buy a phone number** with *Voice* capability (Console → Phone Numbers →
+     Buy a number; ~$1.15/mo, covered by trial credit). Calls fail with
+     "source phone number not verified" if you skip this.
+   - **Verify the number you want to be called on** (Console → Phone Numbers →
+     Verified Caller IDs). Trial accounts can only call verified numbers.
+   - Copy `.env.example` to `.env` and fill in your Account SID, Auth Token,
+     Twilio number (`TWILIO_FROM_NUMBER`) and your number (`TWILIO_TO_NUMBER`).
+   - Trial limitation: a recorded Twilio preamble plays before your message on
+     every call. Upgrading removes it.
 3. **Install deps**: `uv sync`
 4. **First run / OAuth consent** (opens a browser once, token cached in `token.json`):
    ```
