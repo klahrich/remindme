@@ -1,4 +1,8 @@
-# remindme
+# meetingtime
+
+[![CI](https://github.com/klahrich/meetingtime/actions/workflows/ci.yml/badge.svg)](https://github.com/klahrich/meetingtime/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Python >=3.11](https://img.shields.io/badge/python->=3.11-blue.svg)](https://www.python.org/)
 
 Phone-call reminders **1 minute before every meeting**, across all Google Calendars
 linked to one Google account. Built with Google Calendar API + Twilio, runs on
@@ -47,6 +51,11 @@ Alternative to Task Scheduler: `uv run scripts/loop_runner.py`
 | `WINDOW_SECONDS` | `60` | detection window; keep = scheduler interval |
 | `SKIP_FREE_EVENTS` | `true` | skip events marked "free" |
 | `CALENDAR_BLOCKLIST` | `holiday,birthday` | skip calendars matching these substrings |
+
+## Contributing
+
+Contributions welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for dev setup,
+safe testing (dry-run mode), and PR guidelines. Licensed under [MIT](LICENSE).
 
 ## Notes & limitations
 
