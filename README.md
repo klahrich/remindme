@@ -8,6 +8,10 @@ Phone-call reminders **1 minute before every meeting**, across all Google Calend
 linked to one Google account. Built with Google Calendar API + Twilio, runs on
 Windows via Task Scheduler (stateless minute-check every 60s).
 
+<p align="center">
+  <img src="assets/meetingtime.jpeg" alt="Incoming reminder call, one minute before a meeting" width="280">
+</p>
+
 ## How it works
 
 Every 60 seconds, `src/main.py` asks every (non-blocklisted) Google Calendar for
@@ -51,6 +55,14 @@ Alternative to Task Scheduler: `uv run scripts/loop_runner.py`
 | `WINDOW_SECONDS` | `60` | detection window; keep = scheduler interval |
 | `SKIP_FREE_EVENTS` | `true` | skip events marked "free" |
 | `CALENDAR_BLOCKLIST` | `holiday,birthday` | skip calendars matching these substrings |
+
+## Platform support
+
+- **Windows** — supported (Task Scheduler, runs hidden)
+- **Linux / macOS** — **not supported yet** (no scheduler integration). The core
+  check is platform-independent, so this is mostly a matter of wiring up cron /
+  launchd. Want it? [Open an issue](https://github.com/klahrich/meetingtime/issues/new?template=feature_request.md)
+  — interest will prioritize it.
 
 ## Contributing
 
