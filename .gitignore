@@ -1,0 +1,19 @@
+# Secrets — NEVER commit
+.env
+*.env
+!*.env.example
+credentials.json
+gcp-remindme-oauth-client.json
+*-oauth-client.json
+client_secret_*.json
+token.json
+
+# Runtime state
+state/
+*.log
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
